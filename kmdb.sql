@@ -314,19 +314,17 @@ VALUES (
 .print "======"
 .print ""
 
-SELECT title, year_released, MPAA_rating
+SELECT title, year_released, MPAA_rating, director
 FROM movie;
-
-SELECT name, character, movie
-FROM actor
-ORDER BY movie;
-
-
-
-
 
 
 .print ""
 .print "Top Cast"
 .print "========"
 .print ""
+
+SELECT movie, name, character
+FROM actor
+ORDER BY movie;
+
+
