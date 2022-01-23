@@ -104,6 +104,7 @@ CREATE TABLE actor (
     name TEXT,
     character TEXT,
     movie TEXT
+    movie_ID INTEGER
 );
 
 INSERT INTO movie (
