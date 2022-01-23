@@ -97,76 +97,110 @@ CREATE TABLE movie (
     title TEXT,
     year_released TEXT,
     MPAA_rating TEXT,
-    director_id INTEGER
-);
-
-CREATE TABLE director (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    movie_id INTEGER,
-    actor_id INTEGER,
-    character_id INTEGER
+    director TEXT
 );
 
 CREATE TABLE actor (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
-    character_id INTEGER,
-    movie_id INTEGER,
-    director_id INTEGER
-);
-
-CREATE TABLE character (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    director_id INTEGER,
-    actor_id INTEGER,
-    movie_id INTEGER
+    character TEXT,
+    movie TEXT
 );
 
 INSERT INTO movie (
     title,
     year_released,
-    MPAA_rating
+    MPAA_rating,
+    director
 )
 VALUES (
     'Batman Begins',
     '2005',
-    'PG-13'
+    'PG-13',
+    'Chrisopher Nolan'
 );
 
 INSERT INTO movie (
     title,
     year_released,
-    MPAA_rating
+    MPAA_rating,
+    director
 )
 VALUES (
     'The Dark Knight',
     '2008',
-    'PG-13'
+    'PG-13',
+    'Chrisopher Nolan'
 );
 
 INSERT INTO movie (
     title,
     year_released,
-    MPAA_rating
+    MPAA_rating,
+    director
 )
 VALUES (
     'The Dark Knight Rises',
     '2012',
-    'PG-13'
+    'PG-13',
+    'Chrisopher Nolan'
 );
 
 INSERT INTO actor (
-    name
-    character
+    name,
+    character,
     movie
 )
 VALUES (
-    'Christian Bale'
-    'Bruce Wayne'
+    'Christian Bale',
+    'Bruce Wayne',
     'Batman Begins'
 );
+INSERT INTO actor (
+    name,
+    character,
+    movie
+)
+VALUES (
+    'Christian Bale',
+    'Bruce Wayne',
+    'The Dark Knight'
+);
+
+INSERT INTO actor (
+    name,
+    character,
+    movie
+)
+VALUES (
+    'Christian Bale',
+    'Bruce Wayne',
+    'The Dark Knight Rises'
+);
+
+
+INSERT INTO actor (
+    name,
+    character,
+    movie
+)
+VALUES (
+    'Michael Caine',
+    'Alfred',
+    'Batman Begins'
+);
+INSERT INTO actor (
+    name,
+    character,
+    movie
+)
+VALUES (
+    'Michael Caine',
+    'Alfred',
+    'The Dark Knight'
+);
+
+
 
 
 .print "Movies"
@@ -176,8 +210,8 @@ VALUES (
 SELECT title, year_released, MPAA_rating
 FROM movie;
 
-SELECT name
-FROM director;
+SELECT name, character, movie
+FROM actor;
 
 
 
