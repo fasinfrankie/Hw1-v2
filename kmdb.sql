@@ -197,6 +197,7 @@ INSERT INTO actors (actor_name,character_name,movies_id)
 VALUES ('Anne Hathaway','Selina Kyle','3');
 
 --------------- Output commands --------------- 
+.print ""
 .print "Movies"
 .print "======"
 .print ""
