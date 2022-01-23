@@ -86,18 +86,18 @@
 
 
 
--- Visual structure
+--------------- Visual architecture --------------- 
 .mode column
 .headers off
 .width 20 20 20
 
--- Drop commands
+--------------- Drop commands --------------- 
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS actors;
 DROP TABLE IF EXISTS directors;
 DROP TABLE IF EXISTS title;
 
--- Domain Models
+--------------- Domain models --------------- 
 
 CREATE TABLE directors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -122,250 +122,82 @@ CREATE TABLE actors (
     directors_id INTEGER
 );
 
--- Data input for all tables below
+--------------- Data input for all tables below --------------- 
 
 -----------------
 --DIRECTORS data
 -----------------
+INSERT INTO directors (director_name,movies_id)
+VALUES ('Christopher Nolan','1');
 
-INSERT INTO directors (
-    director_name,
-    movies_id
-)
-VALUES (
-    'Christopher Nolan',
-    '1'
-);
-INSERT INTO directors (
-    director_name,
-    movies_id
-)
-VALUES (
-    'Christopher Nolan',
-    '2'
-);
-INSERT INTO directors (
-    director_name,
-    movies_id
-)
-VALUES (
-    'Christopher Nolan',
-    '3'
-);
+INSERT INTO directors (director_name,movies_id)
+VALUES ('Christopher Nolan','2');
+
+INSERT INTO directors (director_name,movies_id)
+VALUES ('Christopher Nolan','3');
+
+
 -----------------
 -- MOVIES data
 -----------------
+INSERT INTO movies (movie_title,year_released,MPAA_rating,directors_id)
+VALUES ('Batman Begins','2005','PG-13','1');
 
-INSERT INTO movies (
-    movie_title,
-    year_released,
-    MPAA_rating,
-    directors_id
-)
-VALUES (
-    'Batman Begins',
-    '2005',
-    'PG-13',
-    '1'
-);
+INSERT INTO movies (movie_title,year_released,MPAA_rating,directors_id)
+VALUES ('The Dark Knight','2008','PG-13','2');
 
-INSERT INTO movies (
-    movie_title,
-    year_released,
-    MPAA_rating,
-    directors_id
-)
-VALUES (
-    'The Dark Knight',
-    '2008',
-    'PG-13',
-    '2'
-);
-INSERT INTO movies (
-    movie_title,
-    year_released,
-    MPAA_rating,
-    directors_id
-)
-VALUES (
-    'The Dark Knight Rises',
-    '2012',
-    'PG-13',
-    '3'
-);
-
+INSERT INTO movies (movie_title,year_released,MPAA_rating,directors_id)
+VALUES ('The Dark Knight Rises','2012','PG-13','3');
 
 -----------------
 -- ACTORS data
 -----------------
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Christian Bale','Bruce Wayne','1');
 
-)
-VALUES (
-    'Christian Bale',
-    'Bruce Wayne',
-    '1'
-);
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Michael Caine','Alfred','1');
 
-)
-VALUES (
-    'Christian Bale',
-    'Bruce Wayne',
-    '2'
-);
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Liam Neeson','Ra`s Al Ghul','1');
 
-)
-VALUES (
-    'Christian Bale',
-    'Bruce Wayne',
-    '3'
-);
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Katie Holmes','Rachel Dawes','1');
 
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Gary Oldman','Commissioner Gordon','1');
 
-)
-VALUES (
-    'Michael Caine',
-    'Alfred',
-    '1'
-);
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Christian Bale','Bruce Wayne','2');
 
-)
-VALUES (
-    'Michael Caine',
-    'Alfred',
-    '2'
-);
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Heath Ledger','Joker','2');
 
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Aaron Eckhart','Harvey Dent','2');
 
-)
-VALUES (
-    'Liam Neeson',
-    'Ra`s Al Ghul',
-    '1'
-);
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Michael Caine','Alfred','2');
 
-)
-VALUES (
-    'Katie Holmes',
-    'Rachel Dawes',
-    '1'
-);
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Maggie Gyllenhaal','Rachel Dawes','2');
 
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
-)
-VALUES (
-    'Gary Oldman',
-    'Commissioner Gordon',
-    '1'
-);
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
-)
-VALUES (
-    'Gary Oldman',
-    'Commissioner Gordon',
-    '3'
-);
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Christian Bale','Bruce Wayne','3');
 
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
-)
-VALUES (
-    'Heath Ledger',
-    'Joker',
-    '2'
-);
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Gary Oldman','Commissioner Gordon','3');
 
-)
-VALUES (
-    'Aaron Eckhart',
-    'Harvey Dent',
-    '2'
-);
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ( 'Tom Hardy','Bane','3');
 
-)
-VALUES (
-    'Maggie Gyllenhaal',
-    'Rachel Dawes',
-    '2'
-);
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Joseph Gordon-Levitt','John Blake','3');
 
-)
-VALUES (
-    'Tom Hardy',
-    'Bane',
-    '3'
-);
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
+INSERT INTO actors (actor_name,character_name,movies_id)
+VALUES ('Anne Hathaway','Selina Kyle','3');
 
-)
-VALUES (
-    'Joseph Gordon-Levitt',
-    'John Blake',
-    '3'
-);
-INSERT INTO actors (
-    actor_name,
-    character_name,
-    movies_id
-
-)
-VALUES (
-    'Anne Hathaway',
-    'Selina Kyle',
-    '3'
-);
-
--- Output commands
+--------------- Output commands --------------- 
 .print "Movies"
 .print "======"
 .print ""
