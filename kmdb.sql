@@ -103,7 +103,7 @@ CREATE TABLE actor (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
     character TEXT,
-    movie TEXT
+    movie TEXT,
     movie_ID INTEGER
 );
 
