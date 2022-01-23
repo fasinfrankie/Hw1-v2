@@ -77,18 +77,11 @@
 -- TODO!
 
 -- Prints a header for the movies output
-.print "Movies"
-.print "======"
-.print ""
 
 -- The SQL statement for the movies output
 -- TODO!
 
 -- Prints a header for the cast output
-.print ""
-.print "Top Cast"
-.print "========"
-.print ""
 
 
 -- The SQL statement for the cast output
@@ -132,8 +125,66 @@ CREATE TABLE character (
 );
 
 INSERT INTO movie (
-    title TEXT,
-    year_released TEXT,
-    MPAA_rating TEXT,
-    
+    title,
+    year_released,
+    MPAA_rating
 )
+VALUES (
+    'Batman Begins',
+    '2005',
+    'PG-13'
+);
+
+INSERT INTO movie (
+    title,
+    year_released,
+    MPAA_rating
+)
+VALUES (
+    'The Dark Knight',
+    '2008',
+    'PG-13'
+);
+
+INSERT INTO movie (
+    title,
+    year_released,
+    MPAA_rating
+)
+VALUES (
+    'The Dark Knight Rises',
+    '2012',
+    'PG-13'
+);
+
+INSERT INTO actor (
+    name
+    character
+    movie
+)
+VALUES (
+    'Christian Bale'
+    'Bruce Wayne'
+    'Batman Begins'
+);
+
+
+.print "Movies"
+.print "======"
+.print ""
+
+SELECT title, year_released, MPAA_rating
+FROM movie;
+
+SELECT name
+FROM director;
+
+
+
+
+
+
+.print ""
+.print "Top Cast"
+.print "========"
+.print ""
