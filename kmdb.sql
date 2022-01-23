@@ -63,8 +63,6 @@
 -- The Dark Knight Rises  Anne Hathaway         Selina Kyle
 
 -- Turns column mode on but headers off
-.mode column
-.headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
@@ -85,6 +83,10 @@
 
 -- The SQL statement for the cast output
 -- TODO!
+
+.mode column
+.headers off
+.width 20 20 20
 
 DROP TABLE IF EXISTS movie;
 DROP TABLE IF EXISTS director;
