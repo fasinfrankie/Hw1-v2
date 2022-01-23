@@ -83,7 +83,6 @@
 
 -- Prints a header for the cast output
 
-
 -- The SQL statement for the cast output
 -- TODO!
 
