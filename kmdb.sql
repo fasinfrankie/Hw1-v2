@@ -284,7 +284,6 @@ SELECT movies.movie_title,movies.year_released,movies.MPAA_rating,directors.dire
 FROM movies INNER JOIN directors
 ON directors.id = movies.directors_id;
 
-
 .print ""
 .print "Top Cast"
 .print "========"
@@ -295,3 +294,4 @@ FROM casting_decisions
 INNER JOIN movies ON movies.id = casting_decisions.movies_id
 INNER JOIN actors ON actors.id = casting_decisions.actors_id
 INNER JOIN characters ON characters.id = casting_decisions.characters_id;
+
