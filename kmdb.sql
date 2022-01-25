@@ -95,14 +95,14 @@
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS actors;
 DROP TABLE IF EXISTS directors;
+DROP TABLE IF EXISTS characters;
+DROP TABLE IF EXISTS casting_decisions;
 
 --------------- Domain models --------------- 
 
 CREATE TABLE directors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    director_name TEXT,
-    directors_id INTEGER,
-    movies_id INTEGER
+    director_name TEXT
 );
 
 CREATE TABLE movies (
@@ -110,91 +110,169 @@ CREATE TABLE movies (
     movie_title TEXT,
     year_released TEXT,
     MPAA_rating TEXT,
-    directors_id INTEGER
+    directors_id INTEGER  
 );
 
 CREATE TABLE actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    actor_name TEXT,
-    character_name TEXT,
-    movies_id INTEGER,
-    directors_id INTEGER
+    actor_name TEXT
 );
+
+CREATE TABLE characters (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    character_name TEXT
+);
+
+CREATE TABLE casting_decisions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movies_id INTEGER,
+    actors_id INTEGER,
+    characters_id INTEGER 
+);
+
 
 --------------- Data input for all tables below --------------- 
 
 -----------------
 --DIRECTORS data
 -----------------
-INSERT INTO directors (director_name,movies_id)
-VALUES ('Christopher Nolan','1');
-
-INSERT INTO directors (director_name,movies_id)
-VALUES ('Christopher Nolan','2');
-
-INSERT INTO directors (director_name,movies_id)
-VALUES ('Christopher Nolan','3');
-
+INSERT INTO directors (director_name)
+VALUES ('Christopher Nolan');
 
 -----------------
--- MOVIES data
+-- MOVIES data (Batman Begins)
 -----------------
 INSERT INTO movies (movie_title,year_released,MPAA_rating,directors_id)
 VALUES ('Batman Begins','2005','PG-13','1');
-
+-----------------
+-- MOVIES data (The Dark Knight)
+-----------------
 INSERT INTO movies (movie_title,year_released,MPAA_rating,directors_id)
-VALUES ('The Dark Knight','2008','PG-13','2');
-
+VALUES ('The Dark Knight','2008','PG-13','1');
+-----------------
+-- MOVIES data (The Dark Knight Rises)
+-----------------
 INSERT INTO movies (movie_title,year_released,MPAA_rating,directors_id)
-VALUES ('The Dark Knight Rises','2012','PG-13','3');
+VALUES ('The Dark Knight Rises','2012','PG-13','1');
 
 -----------------
 -- ACTORS data
 -----------------
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Christian Bale','Bruce Wayne','1');
+INSERT INTO actors (actor_name)
+VALUES ('Christian Bale');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Michael Caine','Alfred','1');
+INSERT INTO actors (actor_name)
+VALUES ('Michael Caine');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Liam Neeson','Ra`s Al Ghul','1');
+INSERT INTO actors (actor_name)
+VALUES ('Liam Neeson');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Katie Holmes','Rachel Dawes','1');
+INSERT INTO actors (actor_name)
+VALUES ('Katie Holmes');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Gary Oldman','Commissioner Gordon','1');
+INSERT INTO actors (actor_name)
+VALUES ('Gary Oldman');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Christian Bale','Bruce Wayne','2');
+INSERT INTO actors (actor_name)
+VALUES ('Heath Ledger');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Heath Ledger','Joker','2');
+INSERT INTO actors (actor_name)
+VALUES ('Aaron Eckhart');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Aaron Eckhart','Harvey Dent','2');
+INSERT INTO actors (actor_name)
+VALUES ('Maggie Gyllenhaal');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Michael Caine','Alfred','2');
+INSERT INTO actors (actor_name)
+VALUES ('Tom Hardy');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Maggie Gyllenhaal','Rachel Dawes','2');
+INSERT INTO actors (actor_name)
+VALUES ('Joseph Gordon-Levitt');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Christian Bale','Bruce Wayne','3');
+INSERT INTO actors (actor_name)
+VALUES ('Anne Hathaway');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Gary Oldman','Commissioner Gordon','3');
+-----------------
+-- CHARACTERS data
+-----------------
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ( 'Tom Hardy','Bane','3');
+INSERT INTO characters (character_name)
+VALUES ('Bruce Wayne');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Joseph Gordon-Levitt','John Blake','3');
+INSERT INTO characters (character_name)
+VALUES ('Alfred');
 
-INSERT INTO actors (actor_name,character_name,movies_id)
-VALUES ('Anne Hathaway','Selina Kyle','3');
+INSERT INTO characters (character_name)
+VALUES ('Ra`s Al Ghul');
+
+INSERT INTO characters (character_name)
+VALUES ('Rachel Dawes');
+
+INSERT INTO characters (character_name)
+VALUES ('Commissioner Gordon');
+
+INSERT INTO characters (character_name)
+VALUES ('Joker');
+
+INSERT INTO characters (character_name)
+VALUES ('Harvey Dent');
+
+INSERT INTO characters (character_name)
+VALUES ('Bane');
+
+INSERT INTO characters (character_name)
+VALUES ('John Blake');
+
+INSERT INTO characters (character_name)
+VALUES ('Selina Kyle');
+
+-----------------
+-- CASTING DECISIONS data
+-----------------
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('1','1','1');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('1','2','2');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('1','3','3');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('1','4','4');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('1','5','5');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('2','1','1');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('2','6','6');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('2','7','7');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('2','2','2');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('2','8','4');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('3','1','1');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('3','5','5');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('3','9','8');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('3','10','9');
+
+INSERT INTO casting_decisions (movies_id,actors_id,characters_id)
+VALUES ('3','11','10');
 
 --------------- Output commands --------------- 
 .print ""
@@ -202,8 +280,9 @@ VALUES ('Anne Hathaway','Selina Kyle','3');
 .print "======"
 .print ""
 
-SELECT movies.movie_title, movies.year_released, movies.MPAA_rating, directors.director_name
-FROM movies INNER JOIN directors ON directors.id = movies.directors_id;
+SELECT movies.movie_title,movies.year_released,movies.MPAA_rating,directors.director_name
+FROM movies INNER JOIN directors
+ON directors.id = movies.directors_id;
 
 
 .print ""
@@ -211,6 +290,8 @@ FROM movies INNER JOIN directors ON directors.id = movies.directors_id;
 .print "========"
 .print ""
 
-SELECT movies.movie_title, actors.actor_name, actors.character_name
-FROM movies INNER JOIN actors ON actors.movies_id = movies.id
-ORDER BY movies.movie_title;
+SELECT movies.movie_title,actors.actor_name,characters.character_name
+FROM casting_decisions
+INNER JOIN movies ON movies.id = casting_decisions.movies_id
+INNER JOIN actors ON actors.id = casting_decisions.actors_id
+INNER JOIN characters ON characters.id = casting_decisions.characters_id;
